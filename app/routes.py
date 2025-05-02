@@ -4,8 +4,21 @@ from flask import render_template
 
 @app.route('/')
 def home():
-    return render_template('addidas.html')
+    return render_template('index.html',title='KIPPS MALL')
 
 @app.route('/rolex')
-def addidas():
-    return render_template('rolex.html')
+def rolex():
+    return render_template('rolex.html',title='KIPPS MALL')
+
+@app.route('/dior')
+def dior():
+    return render_template('dior.html',title='KIPPS MALL')
+
+@app.route('/adidas')
+def adidas():
+    return render_template('adidas.html',title='KIPPS MALL')
+
+@app.route('/samsung')
+def samsung():
+    return render_template('samsung.html',title='KIPPS MALL')
+
