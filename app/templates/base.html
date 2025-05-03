@@ -23,11 +23,12 @@
       }
 
       header {
-        background-color: pink;
+        background-color: rgb(192, 255, 234);
         color: navy;
         font-size: 2rem;
         text-align: center;
         padding: 1rem;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       }
 
       .logo-section {
@@ -139,7 +140,7 @@
                     <div class="card-body">
                         <h5 class="card-title text-decoration-underline">Adidas</h5>
                         <p class="card-text">Tired of shoes that can't keep up? Experience superior cushioning, durable materials, and stylish designs that go the distance. Invest in your feet, invest in quality.</p>
-                        <a href="#" class="btn btn-primary">Shop Now</a>
+                        <a href="{{ url_for('home')}}" class="btn btn-primary">Shop Now</a>
                     </div>
                 </div>
             </div>
