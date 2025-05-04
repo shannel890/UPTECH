@@ -107,6 +107,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Help Center</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
           </ul>
     
           
@@ -114,6 +117,13 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
+
+            <div class="cart-container ms-3">
+            <a href="{{ url_for('cart') }}" class="text-decoration-none text-dark">
+              <i class="bi bi-cart3 fs-4"></i>
+              <span class="badge bg-danger rounded-pill">0</span>
+            </a>
+            </div>
     
         </div>
       </div>
