@@ -1,5 +1,7 @@
 from app import app
 from flask import render_template
+from app.forms import Loginform
+from flask import Flask, render_template, request, redirect, url_for, flash
 
 
 
@@ -26,8 +28,8 @@ def samsung():
 @app.route('/cart')
 def cart():
     return render_template('cart.html',title='KIPPS MALL')
-@app.route('/login')
+@app.route('/login',methods=['GET','POST'])
 def login():
     form = Loginform()
-    return render_template('login.html',title='KIPPS MALL',login_form=form)
+    return render_template('login.html',title='KIPPS MALL',form=form)
 
