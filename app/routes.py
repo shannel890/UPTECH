@@ -1,6 +1,7 @@
-from app import app
-from flask import render_template
+from app import app,db
+from flask import render_template,redirect,url_for,flash
 from app.forms import Loginform 
+from app.models import User
 
 @app.route('/')
 def home():
@@ -26,7 +27,14 @@ def samsung():
 def cart():
     return render_template('cart.html', title='KIPPS MALL')
 
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = Loginform()
-    return render_template('login.html', title='KIPPS MALL', form=form)
+   
+@app.route('/logout')
+def logout():
+    flash('You have been logged out.')
+    return redirect(url_for('home'))
+    
