@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1 style="color: navy;font-size: 4em;text-decoration: underline;">REGISTER</h1>
+    
+    </ul>
+    <form action="" method="post">
+        {{ reg_form.csrf_token()}}
+        {{ reg_form.username.label(class="form-label") }}
+        {{ reg_form.username (size=50,class="form-control w-100") }}
+    
+        {{ reg_form.first_name.label (class="form-label")}}
+        {{ reg_form.first_name (class="form-control w-100")}}
+    
+        {{ reg_form.last_name.label (class="form-label")}}
+        {{ reg_form.last_name (class="form-control w-100")}}
+
+        {{ reg_form.email.label (class="form-label")}}
+        {{ reg_form.email (class="form-control w-100")}}
+    
+        {{ reg_form.password.label (class="form-label")}}
+        {{ reg_form.password (class="form-control w-100")}}
+    
+        {{ reg_form.submit (class="btn-primary,form-control w-100")}}
+    
+       
+    </form>
+    </div>
+    {% endblock %}

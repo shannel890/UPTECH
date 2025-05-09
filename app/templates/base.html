@@ -110,7 +110,16 @@
               <a class="nav-link" href="#">Help Center</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('user')}}">User</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('register')}}">Register</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
             </li>
           </ul>
     
@@ -138,6 +147,17 @@
         <div class="logo-text">KIPPS'MALL</div>
       </div>
      </section>
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        {% for category, message in messages %}
+      <div class="alert alert--{{ category }}">
+        {{ message }}
+      </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+     
 
     {% block content %}
     {% endblock %}
