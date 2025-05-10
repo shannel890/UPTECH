@@ -1,5 +1,6 @@
 from app import app,db
 from flask import render_template, redirect, url_for, flash, request
+from flask_login import login_user,login_required,logout_user
 from app.forms import Loginform,Userform
 from app.models import User
 
@@ -8,24 +9,33 @@ def home():
     return render_template('index.html', title='KIPPS MALL')
 
 @app.route('/rolex')
+@login_required
 def rolex():
     return render_template('rolex.html', title='KIPPS MALL')
 
 @app.route('/dior')
+@login_required
 def dior():
     return render_template('dior.html', title='KIPPS MALL')
 
 @app.route('/adidas')
+@login_required
 def adidas():
     return render_template('adidas.html', title='KIPPS MALL')
 
 @app.route('/samsung')
+@login_required
 def samsung():
     return render_template('samsung.html', title='KIPPS MALL')
 
 @app.route('/cart')
+@login_required
 def cart():
     return render_template('cart.html', title='KIPPS MALL')
+
+@app.route('/new')
+def new():
+    return render_template('new.html',title='KIPPS MALL')
 
 @app.route('/user')
 def user():
@@ -53,10 +63,19 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = Loginform()
-    flash(f'you are now successful logged in.')
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user and user.check_password(form.password.data):
+            login_user(user)
+            flash(f'You are now successfully logged in as {user.username}.')
+            return redirect(url_for('home'))
+        else:
+            flash('Invalid username or password. Please try again.')
     return render_template('login.html', form=form)
 @app.route('/logout')
 def logout():
+    logout_user()
     flash('You have been logged out.')
     return redirect(url_for('home'))
     
+

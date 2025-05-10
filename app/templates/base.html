@@ -13,53 +13,130 @@
 
     <style>
       body {
-        margin: 0;
-        padding: 0;
-        background-color: #111; 
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: white;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
       }
 
       header {
-        background-color: pink;
-        color: navy;
-        font-size: 2rem;
-        text-align: center;
-        padding: 1rem;
+      background-color: pink;
+      color: navy;
+      font-size: 2rem;
+      text-align: center;
+      padding: 1rem;
       }
 
       .logo-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
       }
 
       .logo-container {
-        text-align: center;
-        padding: 20px;
-        background: #1a1a1a;
-        border-radius: 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        margin-bottom: 15rem;
+      text-align: center;
+      padding: 20px;
+      background: #1a1a1a;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      margin-bottom: 2rem;
       }
 
       .logo-container img {
-        width: 300px;
-        max-width: 90%;
-        height: auto;
-        margin-bottom: 20px;
+      width: 300px;
+      max-width: 90%;
+      height: auto;
+      margin-bottom: 20px;
       }
 
       .logo-text {
-        font-size: 2rem;
-        color: gold;
-        font-weight: bold;
-        letter-spacing: 2px;
+      font-size: 2rem;
+      color: gold;
+      font-weight: bold;
+      letter-spacing: 2px;
+      }
+
+      #flash-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      }
+
+      .flash-message {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 250px;
+      max-width: 350px;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(8px);
+      color: navy;
+      font-size: 16px;
+      position: relative;
+      animation: fadeSlideIn 0.5s ease-out;
+      transition: opacity 1s ease, transform 1s ease;
+      }
+
+      .flash-message.success {
+      background: linear-gradient(135deg, #4CAF50, #81C784);
+      }
+
+      .flash-message.error {
+      background: linear-gradient(135deg, #f44336, #e57373);
+      }
+
+      .flash-message.info {
+      background: linear-gradient(135deg, #2196F3, #64B5F6);
+      }
+
+      .close-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      margin-left: 10px;
+      font-weight: bold;
+      }
+
+      @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
       }
     </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+      const flashMessages = document.querySelectorAll('.flash-message');
+
+      flashMessages.forEach((msg) => {
+        setTimeout(() => {
+        msg.style.opacity = '0';
+        msg.style.transform = 'translateX(50px)';
+
+        // Remove after fade out
+        setTimeout(() => msg.remove(), 1000);
+        }, 4000);
+      });
+      });
+    </script>
+      
+    
   </head>
 
   <body>
@@ -76,7 +153,7 @@
       <div class="container-fluid">
         
         
-        <a class="navbar-brand" href="#">KIPPS' MALL</a>
+        <a class="navbar-brand" href="{{ url_for('login')}}">KIPPS' MALL</a>
     
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -93,7 +170,7 @@
               <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">New Arrivals</a>
+              <a class="nav-link" href="{{ url_for('new') }}">New Arrivals</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -132,7 +209,7 @@
             <div class="cart-container me-2">
             <a href="{{ url_for('cart') }}" class="position-relative   rounded-pill">
               <i class="bi bi-cart4 fs-1 m-1 text-info"></i>
-              <span class="badge bg-danger rounded-pill">0</span>
+                <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">0</span>
             </a>
             </div>
     
@@ -141,22 +218,32 @@
     </nav>
 
     
-     <section class="logo-section">
+    <section class="logo-section">
       <div class="logo-container">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="KIPPS'MALL Logo">
-        <div class="logo-text">KIPPS'MALL</div>
+        <img 
+          src="{{ url_for('static', filename='logo.png') }}" 
+          alt="KIPPS'MALL Logo" />
+        
+      <div class="logo-text">KIPPS'MALL</div>
       </div>
-     </section>
+    </section>
+    
+    
 
-    {% with messages = get_flashed_messages(with_categories=True) %}
-      {% if messages %}
-        {% for category, message in messages %}
-      <div class="alert alert--{{ category }}">
-        {{ message }}
-      </div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
+     {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div id="flash-container">
+      {% for category, message in messages %}
+        <div class="flash-message {{ category }}">
+          <span class="message-text">{{ message }}</span>
+          <button class="close-btn" onclick="this.parentElement.remove()">×</button>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+   
      
 
     {% block content %}
