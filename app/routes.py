@@ -65,7 +65,7 @@ def login():
     form = Loginform()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
-        if user and user.check_password(form.password.data):
+        if user and user.password == (form.password.data):
             login_user(user)
             flash(f'You are now successfully logged in as {user.username}.')
             return redirect(url_for('home'))
