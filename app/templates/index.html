@@ -3,50 +3,77 @@
 {% block content %}
 
 
-<div class="container mt-5">
+<div class="container my-5">
   <h2 class="text-center mb-4">Featured Products</h2>
-  
+
   <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel">
     
-    
+    <!-- Carousel Indicators -->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
     </div>
 
-    
+    <!-- Carousel Items -->
     <div class="carousel-inner rounded shadow">
+      
+      <!-- Slide 1: Adidas -->
       <div class="carousel-item active">
-        <img src="https://media.istockphoto.com/id/624701342/photo/adidas-store.jpg?s=612x612&w=0&k=20&c=1qIz0tOpzfUaAvqrb1Ft_TJUTQiegpViWPDMG58mksY=" class="card-img-top" alt="Adidas Superstar" class="d-block w-100" alt="Adidas">
-        <div class="carousel-caption d-none d-md-block">
+        <img src="https://media.istockphoto.com/id/624701342/photo/adidas-store.jpg?s=612x612&w=0&k=20&c=1qIz0tOpzfUaAvqrb1Ft_TJUTQiegpViWPDMG58mksY=" 
+             class="d-block w-100" alt="Adidas Store">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
           <h5>Adidas Shoes</h5>
           <p>Experience ultimate comfort and performance.</p>
         </div>
       </div>
+
+      <!-- Slide 2: Dior -->
       <div class="carousel-item">
-        <img src="https://media.istockphoto.com/id/1209051005/photo/logo-of-christian-dior-seen-on-their-prague-main-boutique-dior-or-cd-is-a-french-luxury-goods.jpg?s=612x612&w=0&k=20&c=wAxLQ4tGXApC7YigfPHtfGx1E9U15Z-jb2UJBz_K-eQ=" class="d-block w-100" alt="Dior">
-        <div class="carousel-caption d-none d-md-block">
+        <img src="https://media.istockphoto.com/id/1209051005/photo/logo-of-christian-dior-seen-on-their-prague-main-boutique-dior-or-cd-is-a-french-luxury-goods.jpg?s=612x612&w=0&k=20&c=wAxLQ4tGXApC7YigfPHtfGx1E9U15Z-jb2UJBz_K-eQ=" 
+             class="d-block w-100" alt="Dior Boutique">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
           <h5>Dior Collection</h5>
           <p>Luxury meets timeless style.</p>
         </div>
       </div>
+
+      <!-- Slide 3: Samsung -->
       <div class="carousel-item">
-        <img src="https://media.istockphoto.com/id/1962578958/photo/varna-bulgaria-25th-january-2024-new-smartphone-samsung-galaxy-s24-ultra-and-details-on-the.jpg?s=2048x2048&w=is&k=20&c=vpD-m86LuBZcKqNyWulKl-Bj1px0A1jjEKsuiptPamk=" class="d-block w-100" alt="Samsung">
-        <div class="carousel-caption d-none d-md-block">
+        <img src="https://media.istockphoto.com/id/1962578958/photo/varna-bulgaria-25th-january-2024-new-smartphone-samsung-galaxy-s24-ultra-and-details-on-the.jpg?s=2048x2048&w=is&k=20&c=vpD-m86LuBZcKqNyWulKl-Bj1px0A1jjEKsuiptPamk=" 
+             class="d-block w-100" alt="Samsung Galaxy S24 Ultra">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
           <h5>Samsung Galaxy</h5>
           <p>Smart technology redefined.</p>
         </div>
       </div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://media.istockphoto.com/id/458727719/photo/rolex-deepsea-wristwatch.jpg?s=612x612&w=0&k=20&c=9hv7ESwsaurJuqlMU0vnVzIVtq8CXNGe0j_Hs3ldb4Y=" class="card-img-top" alt="Rolex" class="d-block w-100" alt="Samsung">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Rolex</h5>
-        <p>Staate of the art.</p>
+
+      <!-- Slide 4: Rolex -->
+      <div class="carousel-item">
+        <img src="https://media.istockphoto.com/id/458727719/photo/rolex-deepsea-wristwatch.jpg?s=612x612&w=0&k=20&c=9hv7ESwsaurJuqlMU0vnVzIVtq8CXNGe0j_Hs3ldb4Y=" 
+             class="d-block w-100" alt="Rolex Deepsea Watch">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+          <h5>Rolex</h5>
+          <p>State-of-the-art precision and design.</p>
+        </div>
       </div>
+
     </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
   </div>
+</div>
+
 
    
    
