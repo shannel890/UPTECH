@@ -34,8 +34,13 @@ def cart():
     return render_template('cart.html', title='KIPPS MALL')
 
 @app.route('/new')
+@login_required
 def new():
     return render_template('new.html',title='KIPPS MALL')
+
+@app.route('/help')
+def help():
+    return render_template('help.html',title='KIPPSMALL')
 
 @app.route('/user')
 def user():

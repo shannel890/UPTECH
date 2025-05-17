@@ -1,0 +1,243 @@
+
+    {% extends 'base.html' %}
+    {% block content %}
+    <style>
+        /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1.5rem;
+  }
+  
+  .header {
+    background-color: navy;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .search-bar {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .search-bar input {
+    width: 80%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+  }
+  
+  .search-bar button {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 0 1rem;
+  }
+  
+  .categories h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .category-card {
+    background-color: #e9ecef;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+  }
+  
+  .category-card:hover {
+    background-color: #dee2e6;
+  }
+  
+  .faq-section {
+    margin-bottom: 2rem;
+  }
+  
+  .faq-item {
+    margin-bottom: 1rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .contact-support {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .btn-contact {
+    background-color: #0d6efd;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-contact:hover {
+    background-color: #0b5ed7;
+  }
+  
+  .footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+    </style>
+    <script>
+        function searchFAQ() {
+            const query = document.getElementById("faqSearch").value.toLowerCase();
+            const faqItems = document.querySelectorAll(".faq-item");
+          
+            faqItems.forEach(item => {
+              const text = item.textContent.toLowerCase();
+              if (text.includes(query)) {
+                item.style.display = "block";
+              } else {
+                item.style.display = "none";
+              }
+            });
+          }
+    </script>
+  <header class="header">
+    <div class="container">
+      <h1 style="font-weight: bolder;">KIPPSMALL Help Center</h1>
+      <p style="font-weight: 900;">We're here to help you succeed.</p>
+      
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input type="text" id="faqSearch" placeholder="Search help articles..." />
+        <button onclick="searchFAQ()">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Categories -->
+    <section class="categories">
+      <h2>Browse Topics</h2>
+      <div class="category-grid">
+        <a href="#account" class="category-card">👤 Account</a>
+        <a href="#orders" class="category-card">📦 Orders</a>
+        <a href="#payments" class="category-card">💳 Payments</a>
+        <a href="#shipping" class="category-card">🚚 Shipping</a>
+        <a href="#returns" class="category-card">🔄 Returns</a>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faqs">
+      <h2>Frequently Asked Questions</h2>
+
+      <!-- Account Section -->
+      <div class="faq-section" id="account">
+        <h3>Account</h3>
+        <div class="faq-item">
+          <h4>How do I create an account?</h4>
+          <p>Click 'Sign Up' at the top right corner and follow the instructions.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How can I reset my password?</h4>
+          <p>Visit the login page and click 'Forgot Password'.</p>
+        </div>
+      </div>
+
+      <!-- Orders Section -->
+      <div class="faq-section" id="orders">
+        <h3>Orders</h3>
+        <div class="faq-item">
+          <h4>How do I track my order?</h4>
+          <p>You can track your order via the email confirmation or in the "My Orders" section of your account.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I cancel my order?</h4>
+          <p>Yes, as long as it hasn't been processed yet. Visit "My Orders" to cancel.</p>
+        </div>
+      </div>
+
+      <!-- Payments Section -->
+      <div class="faq-section" id="payments">
+        <h3>Payments</h3>
+        <div class="faq-item">
+          <h4>What payment methods are accepted?</h4>
+          <p>We accept Visa, MasterCard, PayPal, Apple Pay, and Google Pay.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Is my payment secure?</h4>
+          <p>Yes, we use industry-standard encryption to protect your data.</p>
+        </div>
+      </div>
+
+      <!-- Shipping Section -->
+      <div class="faq-section" id="shipping">
+        <h3>Shipping</h3>
+        <div class="faq-item">
+          <h4>How long does shipping take?</h4>
+          <p>Standard shipping takes 3–7 business days depending on location.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Do you offer international shipping?</h4>
+          <p>Yes, we ship worldwide. Additional fees may apply.</p>
+        </div>
+      </div>
+
+      <!-- Returns Section -->
+      <div class="faq-section" id="returns">
+        <h3>Returns</h3>
+        <div class="faq-item">
+          <h4>What is your return policy?</h4>
+          <p>You can return most items within 30 days of delivery for a full refund.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How do I return an item?</h4>
+          <p>Contact our support team or visit the returns center in your account dashboard.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Support -->
+    <section class="contact-support">
+      <h2>Still Need Help?</h2>
+      <p>Contact our customer support team directly:</p>
+      <a href="mailto:support@kippsmall.com" class="btn-contact">📧 Email Us</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 KIPPSMALL. All rights reserved.</p>
+  </footer>
+
+  {% endblock %}
