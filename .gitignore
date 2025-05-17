@@ -1,0 +1,33 @@
+# Ignore Python virtual environment
+uptech/
+.env/
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings (if using VS Code)
+.vscode/
+# Log files
+*.log
+
+# Node.js dependencies
+node_modules/
+
+# Python egg files
+*.egg
+*.egg-info/
+
+# Backup files
+*.bak
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
