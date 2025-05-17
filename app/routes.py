@@ -1,6 +1,6 @@
 from app import app,db
 from flask import render_template, redirect, url_for, flash, request
-from flask_login import login_user,login_required,logout_user
+from flask_login import login_user,login_required,logout_user,current_user
 from app.forms import Loginform,Userform
 from app.models import User
 
@@ -62,6 +62,8 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
     form = Loginform()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
