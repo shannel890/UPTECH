@@ -1,102 +1,102 @@
+{% extends 'base.html' %}
 
-    {% extends 'base.html' %}
-    {% block content %}
-    <style>
-        /* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 1.5rem;
-  }
-  
-  .header {
-    background-color: navy;
-    color: white;
-    padding: 2rem 0;
-    text-align: center;
-  }
-  
-  .header h1 {
-    font-size: 2rem;
-  }
-  
-  .search-bar {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .search-bar input {
-    width: 80%;
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: none;
-  }
-  
-  .search-bar button {
-    background-color: #fff;
-    border: none;
-    cursor: pointer;
-    padding: 0 1rem;
-  }
-  
-  .categories h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-  }
-  
-  .category-card {
-    background-color: #e9ecef;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    transition: background-color 0.3s;
-  }
-  
-  .category-card:hover {
-    background-color: #dee2e6;
-  }
-  
-  .faq-section {
-    margin-bottom: 2rem;
-  }
-  
-  .faq-item {
-    margin-bottom: 1rem;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  }
-  
-  .contact-support {
-    text-align: center;
-    padding: 2rem 0;
-  }
-  
-  .btn-contact {
-    background-color: #0d6efd;
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <h1 class="display-4 mb-4">Help Center</h1>
+        <p class="lead">We're Here to Help You</p>
+    </div>
+</div>
+
+<div class="container py-5">
+    <!-- Search Section -->
+    <section class="search-section mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title text-center mb-4">How can we help you today?</h4>
+                        <form class="search-form">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-lg" placeholder="Search for help...">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="quick-links mb-5">
+        <h2 class="section-title text-center mb-4">Popular Topics</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <i class="bi bi-truck display-4 text-primary"></i>
+                        </div>
+                        <h5 class="card-title text-center">Shipping & Delivery</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none">Tracking your order</a></li>
+                            <li><a href="#" class="text-decoration-none">Shipping rates & policies</a></li>
+                            <li><a href="#" class="text-decoration-none">International shipping</a></li>
+                            <li><a href="#" class="text-decoration-none">Delivery timeframes</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <i class="bi bi-arrow-counterclockwise display-4 text-primary"></i>
+                        </div>
+                        <h5 class="card-title text-center">Returns & Refunds</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none">Return policy</a></li>
+                            <li><a href="#" class="text-decoration-none">How to return</a></li>
+                            <li><a href="#" class="text-decoration-none">Refund status</a></li>
+                            <li><a href="#" class="text-decoration-none">Exchange process</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <i class="bi bi-shield-check display-4 text-primary"></i>
+                        </div>
+                        <h5 class="card-title text-center">Account & Security</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none">Managing your account</a></li>
+                            <li><a href="#" class="text-decoration-none">Password reset</a></li>
+                            <li><a href="#" class="text-decoration-none">Payment security</a></li>
+                            <li><a href="#" class="text-decoration-none">Privacy policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section mb-5">
+        <h2 class="section-title text-center mb-4">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        How do I track my order?
+                    </button>
+                </h2>
+                <div id="faq
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
