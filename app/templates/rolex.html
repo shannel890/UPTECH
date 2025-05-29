@@ -1,17 +1,202 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2 class="text-center mb-4">Featured Products</h2>
-    <div class="d-flex justify-content-center">
-        <div class="card w-75 h-100">
-            <div class="card h-100">
-                <img src="https://media.istockphoto.com/id/458727719/photo/rolex-deepsea-wristwatch.jpg?s=612x612&w=0&k=20&c=9hv7ESwsaurJuqlMU0vnVzIVtq8CXNGe0j_Hs3ldb4Y=" class="card-img-top" alt="Rolex">
-                <div class="card-body"></div>
-                    <h5 class="card-title">Rolex</h5>
-                    <p class="card-text">This watch will ensure instant recognition and respect by appearance, grab one now.</p>
-                    <a href="{{ url_for('rolex') }}" class="btn btn-primary">Shop Now</a>
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <h1 class="display-4 mb-4">Rolex Collection</h1>
+        <p class="lead">A Legacy of Precision and Excellence</p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Featured Watches -->
+    <section class="mb-5">
+        <h2 class="section-title text-center mb-5">Exceptional Timepieces</h2>
+        <div class="row g-4">
+            <!-- Submariner -->
+            <div class="col-md-4">
+                <div class="card h-100 luxury-card">
+                    <div class="position-relative">
+                        <img src="https://media.istockphoto.com/id/1444657432/photo/rolex-submariner-date-watch-isolated-on-white.jpg" class="card-img-top" alt="Rolex Submariner">
+                        <span class="product-badge">Classic</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Rolex Submariner</h5>
+                        <div class="price-tag">
+                            $12,999
+                            <span class="original-price">$14,500</span>
+                            <span class="discount-badge">Limited</span>
+                        </div>
+                        <p class="card-text">The ultimate diving watch, setting the standard since 1953.</p>
+                        <ul class="feature-list">
+                            <li>Oyster Steel Case</li>
+                            <li>300m Water Resistance</li>
+                            <li>Perpetual Movement</li>
+                            <li>Cerachrom Bezel</li>
+                        </ul>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-primary">Reserve Now</a>
+                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#detailsModal">View Details</button>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            
+            <!-- Daytona -->
+            <div class="col-md-4">
+                <div class="card h-100 luxury-card">
+                    <div class="position-relative">
+                        <img src="https://media.istockphoto.com/id/458727719/photo/rolex-deepsea-wristwatch.jpg" class="card-img-top" alt="Rolex Daytona">
+                        <span class="product-badge">Premium</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Rolex Daytona</h5>
+                        <div class="price-tag">
+                            $34,999
+                            <span class="original-price">$37,500</span>
+                            <span class="discount-badge">Exclusive</span>
+                        </div>
+                        <p class="card-text">Born for racing, perfected for luxury.</p>
+                        <ul class="feature-list">
+                            <li>Chronograph Function</li>
+                            <li>18kt Gold Case</li>
+                            <li>Tachymetric Scale</li>
+                            <li>Oyster Bracelet</li>
+                        </ul>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-primary">Reserve Now</a>
+                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#detailsModal">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day-Date -->
+            <div class="col-md-4">
+                <div class="card h-100 luxury-card">
+                    <div class="position-relative">
+                        <img src="https://media.istockphoto.com/id/1457542279/photo/gold-rolex-daydate-watch-on-white-background.jpg" class="card-img-top" alt="Rolex Day-Date">
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Rolex Day-Date</h5>
+                        <div class="price-tag">
+                            $45,999
+                            <span class="original-price">$48,000</span>
+                            <span class="discount-badge">Latest</span>
+                        </div>
+                        <p class="card-text">The pinnacle of prestige and precision.</p>
+                        <ul class="feature-list">
+                            <li>18kt Yellow Gold</li>
+                            <li>President Bracelet</li>
+                            <li>Fluted Bezel</li>
+                            <li>Day-Date Display</li>
+                        </ul>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-primary">Reserve Now</a>
+                            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#detailsModal">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Section -->
+    <section class="heritage-section mb-5 py-5 bg-light rounded">
+        <div class="container">
+            <h2 class="text-center mb-5">The Rolex Legacy</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="heritage-content p-4">
+                        <h3 class="mb-4">A Century of Excellence</h3>
+                        <p class="lead">Since 1905, Rolex has been setting the standard for luxury timepieces. Each watch is a masterpiece of precision engineering and timeless design.</p>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Swiss-made precision</li>
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> In-house movements</li>
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Perpetual innovation</li>
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Timeless design</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="heritage-image">
+                        <img src="https://media.istockphoto.com/id/1446644030/photo/smart-watch-elegant-and-modern-design-of-black-case-and-blue-digital-lcd-display-screen-showing.jpg" alt="Rolex Craftsmanship" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concierge Service -->
+    <section class="concierge-section mb-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="mb-4">Personal Concierge Service</h2>
+                    <p class="lead mb-4">Experience the exceptional service that defines Rolex ownership.</p>
+                    <div class="service-features">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-clock fs-4 text-primary me-3"></i>
+                            <div>
+                                <h5 class="mb-1">Expert Consultation</h5>
+                                <p class="mb-0">Personal guidance from our watch specialists</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-shield-check fs-4 text-primary me-3"></i>
+                            <div>
+                                <h5 class="mb-1">Authentication Service</h5>
+                                <p class="mb-0">Certified genuine Rolex timepieces</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-gear fs-4 text-primary me-3"></i>
+                            <div>
+                                <h5 class="mb-1">Maintenance Program</h5>
+                                <p class="mb-0">Comprehensive care for your timepiece</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary mt-4">Schedule Consultation</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://media.istockphoto.com/id/1407759041/photo/close-up-of-luxury-watch-store-window-display.jpg" alt="Concierge Service" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Details Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailsModalLabel">Product Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="https://media.istockphoto.com/id/458727719/photo/rolex-deepsea-wristwatch.jpg" class="img-fluid" alt="Product Details">
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Technical Specifications</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><strong>Movement:</strong> Automatic</li>
+                            <li class="mb-2"><strong>Case Material:</strong> 18kt Gold</li>
+                            <li class="mb-2"><strong>Water Resistance:</strong> 300m</li>
+                            <li class="mb-2"><strong>Diameter:</strong> 41mm</li>
+                            <li class="mb-2"><strong>Power Reserve:</strong> 70 hours</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Reserve Now</button>
             </div>
         </div>
     </div>
