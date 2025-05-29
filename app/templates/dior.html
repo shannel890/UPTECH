@@ -1,21 +1,152 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2 class="text-center mb-4">Featured Products</h2>
-    <div class="d-flex justify-content-center">
-        <div class="card w-75 h-100">
-            <div class="card h-100">
-                <img src="https://media.istockphoto.com/id/1209051005/photo/logo-of-christian-dior-seen-on-their-prague-main-boutique-dior-or-cd-is-a-french-luxury-goods.jpg?s=612x612&w=0&k=20&c=wAxLQ4tGXApC7YigfPHtfGx1E9U15Z-jb2UJBz_K-eQ=" class="card-img-top" alt="Dior">
-                <div class="card-body">
-                    <h5 class="card-title">Dior</h5>
-                    <p class="card-text">Your Style Starts from the Ground Up. Make a statement with our curated collection of designer clothes. From sleek and sophisticated to bold and expressive. Elevate your look, step out with confidence.</p>
-                    <a href="{{ url_for('dior') }}" class="btn btn-primary">Shop Now</a>
-                </div>
-            </div>
-        </div>
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <h1 class="display-4 mb-4">Dior Collection</h1>
+        <p class="lead">Experience the Epitome of Parisian Luxury</p>
     </div>
 </div>
 
+<div class="container">
+    <!-- Featured Collections -->
+    <section class="mb-5">
+        <h2 class="section-title text-center mb-4">Latest Arrivals</h2>
+        <div class="row g-4">
+            <!-- Lady Dior Bag -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="position-relative">
+                        <img src="https://media.istockphoto.com/id/2088503599/photo/fashionable-woman.jpg?s=612x612&w=0&k=20&c=vxrbM-wvB_gEcB5Q-KFeDZJJB16OwnWk94xromH1PlM=" class="card-img-top" alt="Lady Dior Bag">
+                        <span class="product-badge">Iconic</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Lady Dior Bag</h5>
+                        <div class="price-tag">
+                            $4,999
+                            <span class="original-price">$5,500</span>
+                            <span class="discount-badge">Limited</span>
+                        </div>
+                        <p class="card-text">The iconic Lady Dior bag, a symbol of elegance and timeless style.</p>
+                        <ul class="feature-list">
+                            <li>Lambskin Leather</li>
+                            <li>Cannage Stitching</li>
+                            <li>Gold Hardware</li>
+                            <li>Signature Charms</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- J'adore Perfume -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="position-relative">
+                        <img src="https://media.istockphoto.com/id/2172836783/photo/a-chic-bottle-with-a-gold-cap-of-cosmetic-perfume-on-an-abstract-marble-background-top-view.jpg?s=612x612&w=0&k=20&c=eu13oSR450r5ZoxhwB-lxnAQsk80vBvdtTKV_H-bEhc=" class="card-img-top" alt="J'adore Perfume">
+                        <span class="product-badge">Bestseller</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">J'adore Eau de Parfum</h5>
+                        <div class="price-tag">
+                            $135
+                            <span class="original-price">$150</span>
+                            <span class="discount-badge">-10%</span>
+                        </div>
+                        <p class="card-text">A floral bouquet that celebrates the most beautiful flowers.</p>
+                        <ul class="feature-list">
+                            <li>100ml Bottle</li>
+                            <li>Floral Fragrance</li>
+                            <li>Long-lasting</li>
+                            <li>Signature Bottle</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Rouge Dior -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="position-relative">
+                        <img src="https://media.istockphoto.com/id/458974161/photo/lipstick-on-white.jpg?s=612x612&w=0&k=20&c=_zjxB4YMudXt9qHBoe_kZBIu1heQ08q9Bg7CticreIs=" class="card-img-top" alt="Rouge Dior">
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Rouge Dior Collection</h5>
+                        <div class="price-tag">
+                            $42
+                            <span class="original-price">$45</span>
+                            <span class="discount-badge">New</span>
+                        </div>
+                        <p class="card-text">Iconic lipstick with couture color and floral lip care.</p>
+                        <ul class="feature-list">
+                            <li>Long Wear Formula</li>
+                            <li>Natural Ingredients</li>
+                            <li>Refillable Case</li>
+                            <li>18 Hour Wear</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Brand Story -->
+    <section class="features-section mb-5">
+        <h2 class="section-title text-center mb-4">The House of Dior</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="text-center">
+                    <i class="bi bi-stars display-4 text-primary"></i>
+                    <h4 class="mt-3">Heritage</h4>
+                    <p>75 years of haute couture excellence</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <i class="bi bi-palette display-4 text-primary"></i>
+                    <h4 class="mt-3">Artistry</h4>
+                    <p>Blending tradition with modernity</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <i class="bi bi-gem display-4 text-primary"></i>
+                    <h4 class="mt-3">Luxury</h4>
+                    <p>Exceptional materials and craftsmanship</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <i class="bi bi-heart display-4 text-primary"></i>
+                    <h4 class="mt-3">Passion</h4>
+                    <p>Dedicated to beauty and excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Service -->
+    <section class="support-section bg-light p-5 rounded mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="mb-4">Exclusive VIP Services</h2>
+                <p class="lead">Experience the extraordinary world of Dior with our premium services.</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> Personal Styling</li>
+                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> Private Shopping</li>
+                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> Beauty Consultations</li>
+                    <li><i class="bi bi-check2-circle text-primary me-2"></i> VIP Events</li>
+                </ul>
+                <a href="#" class="btn btn-primary mt-3">Book Appointment</a>
+            </div>
+            <div class="col-md-6">
+                <img src="https://media.istockphoto.com/id/2163365819/photo/group-of-business-persons-talking-in-the-office.jpg?s=612x612&w=0&k=20&c=PHAgVAZh-tNTIb8tQYthw05jE2R05p-rSZ2omWea2gs=" class="img-fluid rounded" alt="Dior Boutique">
+            </div>
+        </div>
+    </section>
+</div>
 {% endblock %}
