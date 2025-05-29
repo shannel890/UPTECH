@@ -1,21 +1,152 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2 class="text-center mb-4">Featured Products</h2>
-    <div class="d-flex justify-content-center">
-      <div class="card w-75 h-100">
-        <img src="https://media.istockphoto.com/id/1199648781/photo/new-samsung-galaxy-note-10-android-smartphone.jpg?s=612x612&w=0&k=20&c=OVoepdXp3ibbBHm5KoouSxskXZ3pvg6zJnF1EPoR1Hc=" class="card-img-top" alt="Samsung">
-        <div class="card-body">
-          <h5 class="card-title">Samsung</h5>
-          <p class="card-text">
-            Limited Edition Drop! The freshest smart device has just landed in Nairobi. Don't miss your chance
-            to snag these must-have styles. Designed for comfort and crafted with an eye for detail.
-          </p>
-          <a href="{{ url_for('samsung') }}" class="btn btn-primary">Shop Now</a>
-        </div>
-      </div>
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <h1 class="display-4 mb-4">Samsung Galaxy Collection</h1>
+        <p class="lead">Experience the Future of Mobile Technology</p>
     </div>
-  </div>
-  
+</div>
+
+<div class="container">
+    <!-- Featured Products -->
+    <section class="mb-5">
+        <h2 class="section-title text-center mb-4">Latest Releases</h2>
+        <div class="row g-4">
+            <!-- S24 Ultra -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="position-relative">
+                        <img src="https://media.istockphoto.com/id/1348369617/photo/galaxy-z-flip-3.jpg?s=612x612&w=0&k=20&c=M2vUUwtV3UsDJJV3akRlZO9sB8ev49XZMK8P9X8ahKE=" class="card-img-top" alt="Samsung S24 Ultra">
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Galaxy S24 Ultra</h5>
+                        <div class="price-tag">
+                            $1,199.99
+                            <span class="original-price">$1,299.99</span>
+                            <span class="discount-badge">-8%</span>
+                        </div>
+                        <p class="card-text">Experience the power of AI with the revolutionary Galaxy S24 Ultra. Features a 200MP camera system and S Pen functionality.</p>
+                        <ul class="feature-list">
+                            <li>6.8" Dynamic AMOLED Display</li>
+                            <li>200MP Main Camera</li>
+                            <li>5000mAh Battery</li>
+                            <li>Snapdragon 8 Gen 3</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Z Fold 5 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="position-relative">
+                        <img src="https://media.istockphoto.com/id/1169842299/photo/huawei-p30-lite.jpg?s=612x612&w=0&k=20&c=unTytpRBARy4uunFaiVL7oRCfPuIWPpat5xCed5jPJ8=" class="card-img-top" alt="Samsung Z Fold 5">
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Galaxy Z Fold 5</h5>
+                        <div class="price-tag">
+                            $1,799.99
+                            <span class="original-price">$1,899.99</span>
+                            <span class="discount-badge">-5%</span>
+                        </div>
+                        <p class="card-text">Transform your mobile experience with the revolutionary foldable display technology.</p>
+                        <ul class="feature-list">
+                            <li>7.6" Foldable Display</li>
+                            <li>50MP Triple Camera</li>
+                            <li>IPX8 Water Resistant</li>
+                            <li>S Pen Compatible</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- S24+ -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="position-relative">
+                        <img src="https://media.istockphoto.com/id/1299655242/photo/social-media-apps-on-a-samsung-s21-smart-phone.jpg?s=612x612&w=0&k=20&c=gSFkF0rt0q0J0-psuOHxHG_Pbn3fkSdOk2j2Ud9zHyg=" class="card-img-top" alt="Samsung S24+">
+                        <span class="product-badge">Best Value</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Galaxy S24+</h5>
+                        <div class="price-tag">
+                            $999.99
+                            <span class="original-price">$1,099.99</span>
+                            <span class="discount-badge">-9%</span>
+                        </div>
+                        <p class="card-text">The perfect balance of power and sophistication with advanced AI features.</p>
+                        <ul class="feature-list">
+                            <li>6.7" QHD+ Display</li>
+                            <li>50MP Triple Camera</li>
+                            <li>4900mAh Battery</li>
+                            <li>12GB RAM</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section mb-5">
+        <h2 class="section-title text-center mb-4">Why Choose Samsung?</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="text-center">
+                    <i class="bi bi-lightning-charge display-4 text-primary"></i>
+                    <h4 class="mt-3">Innovation</h4>
+                    <p>Leading edge technology and revolutionary features</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <i class="bi bi-shield-check display-4 text-primary"></i>
+                    <h4 class="mt-3">Reliability</h4>
+                    <p>Built to last with premium materials</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <i class="bi bi-camera display-4 text-primary"></i>
+                    <h4 class="mt-3">Photography</h4>
+                    <p>Professional-grade camera systems</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <i class="bi bi-battery-charging display-4 text-primary"></i>
+                    <h4 class="mt-3">Battery Life</h4>
+                    <p>All-day battery with fast charging</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support-section bg-light p-5 rounded mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="mb-4">Need Help?</h2>
+                <p class="lead">Our expert support team is here to assist you with your purchase.</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> 24/7 Customer Support</li>
+                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> Free Shipping</li>
+                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> 1-Year Warranty</li>
+                    <li><i class="bi bi-check2-circle text-primary me-2"></i> Easy Returns</li>
+                </ul>
+                <a href="#" class="btn btn-primary mt-3">Contact Support</a>
+            </div>
+            <div class="col-md-6">
+                <img src="https://media.istockphoto.com/id/2163365819/photo/group-of-business-persons-talking-in-the-office.jpg?s=612x612&w=0&k=20&c=PHAgVAZh-tNTIb8tQYthw05jE2R05p-rSZ2omWea2gs=" alt="Customer Support">
+            </div>
+        </div>
+    </section>
+</div>
 {% endblock %}
