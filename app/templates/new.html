@@ -1,16 +1,286 @@
 {% extends 'base.html' %}
 {% block content %}
 
-  <div class="container mt-5">
-    <h2 class="text-center mb-4">Featured Products</h2>
-    <div class="d-flex justify-content-center">
-        <div class="card w-75 h-100">
-            <div class="card h-100">
-                <img src="https://cdn.flightclub.com/TEMPLATE/251724/1.jpg" class="card-img-top" alt="jordan 4">
-                <div class="card-body">
-                    <h5 class="card-title">Brown Jordan 4</h5>
-                  <p class="card-text">Experience unmatched style and comfort with the Brown Jordan 4. Perfect for sneaker enthusiasts, this iconic design combines premium materials with timeless appeal, making it a must-have for your collection.</p>
-                    <a href="{{ url_for('new') }}" class="btn btn-primary">Shop Now</a>
+<!-- Hero Section -->
+<div class="hero-section position-relative">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative z-1 py-5">
+        <div class="row min-vh-50 align-items-center">
+            <div class="col-lg-8">
+                <span class="badge bg-primary mb-3">Latest Drops</span>
+                <h1 class="display-3 text-white fw-bold mb-4">Discover What's New</h1>
+                <p class="lead text-white mb-4">Experience the latest in fashion, tech, and lifestyle. Be the first to own our newest arrivals.</p>
+                <div class="d-flex gap-3">
+                    <a href="#new-releases" class="btn btn-primary btn-lg">Shop New Arrivals</a>
+                    <a href="#coming-soon" class="btn btn-outline-light btn-lg">Coming Soon</a>
+                </div>
+                <div class="mt-4">
+                    <div class="d-flex gap-3">
+                        <div class="text-white">
+                            <h3 class="fw-bold mb-0">150+</h3>
+                            <small>New Products</small>
+                        </div>
+                        <div class="text-white">
+                            <h3 class="fw-bold mb-0">24h</h3>
+                            <small>Express Delivery</small>
+                        </div>
+                        <div class="text-white">
+                            <h3 class="fw-bold mb-0">30</h3>
+                            <small>Day Returns</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <!-- New Releases Grid -->
+    <section class="new-releases mb-5" id="new-releases">
+        <div class="row g-4">
+            <!-- Jordan 4 -->
+            <div class="col-md-6">
+                <div class="card h-100 position-relative overflow-hidden">
+                    <span class="product-badge">Just Landed</span>
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="https://cdn.flightclub.com/TEMPLATE/251724/1.jpg" class="img-fluid h-100 object-fit-cover" alt="Brown Jordan 4">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">Brown Jordan 4</h5>
+                                <div class="price-tag mb-3">
+                                    $299.99
+                                    <span class="original-price">$349.99</span>
+                                    <span class="discount-badge">-15%</span>
+                                </div>
+                                <p class="card-text">Experience unmatched style and comfort with the Brown Jordan 4. Perfect for sneaker enthusiasts.</p>
+                                <ul class="feature-list">
+                                    <li>Premium Suede Upper</li>
+                                    <li>Air Cushioning</li>
+                                    <li>Iconic Design</li>
+                                    <li>Limited Release</li>
+                                </ul>
+                                <a href="#" class="btn btn-primary w-100 mb-2">Add to Cart</a>
+                                <button class="btn btn-outline-secondary w-100" data-bs-toggle="modal" data-bs-target="#productModal">Quick View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Samsung S24 Ultra -->
+            <div class="col-md-6">
+                <div class="card h-100 position-relative overflow-hidden">
+                    <span class="product-badge">New Tech</span>
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="https://media.istockphoto.com/id/2195300625/photo/barcelona-spain-january-22-2025-close-up-of-a-hand-holding-the-new-samsung-galaxy-s24-ultra.jpg?s=612x612&w=0&k=20&c=plEc8tEeymEvWKGWnT1WWy8QccEyKU_y_Kc7Vz0Ings=" alt="Samsung S24 Ultra">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">Samsung S24 Ultra</h5>
+                                <div class="price-tag mb-3">
+                                    $1,199.99
+                                    <span class="original-price">$1,299.99</span>
+                                    <span class="discount-badge">Pre-order</span>
+                                </div>
+                                <p class="card-text">The latest flagship with revolutionary AI features and premium camera system.</p>
+                                <ul class="feature-list">
+                                    <li>200MP Camera</li>
+                                    <li>AI-Powered Features</li>
+                                    <li>S Pen Included</li>
+                                    <li>5G Connectivity</li>
+                                </ul>
+                                <a href="#" class="btn btn-primary w-100 mb-2">Pre-order Now</a>
+                                <button class="btn btn-outline-secondary w-100" data-bs-toggle="modal" data-bs-target="#productModal">Quick View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section class="trending-section mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="section-title">Trending Now</h2>
+            <div class="trending-nav">
+                <button class="btn btn-sm btn-outline-primary me-2 active">All</button>
+                <button class="btn btn-sm btn-outline-primary me-2">Fashion</button>
+                <button class="btn btn-sm btn-outline-primary me-2">Tech</button>
+                <button class="btn btn-sm btn-outline-primary">Accessories</button>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card trend-card h-100">
+                    <div class="card-badge bg-danger">Hot</div>
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" class="card-img-top" alt="Nike Sneakers">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Air Max</h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong class="text-primary">$129.99</strong>
+                            <small class="text-success">
+                                <i class="bi bi-graph-up-arrow"></i> Trending
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card trend-card h-100">
+                    <div class="card-badge bg-primary">New</div>
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" class="card-img-top" alt="Smart Watch">
+                    <div class="card-body">
+                        <h5 class="card-title">Smart Watch Pro</h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong class="text-primary">$199.99</strong>
+                            <small class="text-success">
+                                <i class="bi bi-graph-up-arrow"></i> Popular
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card trend-card h-100">
+                    <div class="card-badge bg-warning">Limited</div>
+                    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad" class="card-img-top" alt="Sunglasses">
+                    <div class="card-body">
+                        <h5 class="card-title">Designer Sunglasses</h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong class="text-primary">$89.99</strong>
+                            <small class="text-success">
+                                <i class="bi bi-graph-up-arrow"></i> Rising
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card trend-card h-100">
+                    <div class="card-badge bg-info">Featured</div>
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" class="card-img-top" alt="Headphones">
+                    <div class="card-body">
+                        <h5 class="card-title">Wireless Headphones</h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong class="text-primary">$159.99</strong>
+                            <small class="text-success">
+                                <i class="bi bi-graph-up-arrow"></i> Best Seller
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon mb-5" id="coming-soon">
+        <h2 class="section-title text-center mb-4">Coming Soon</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card upcoming-card text-center">
+                    <div class="card-body">
+                        <i class="bi bi-watch display-1 text-primary mb-3"></i>
+                        <h5 class="card-title">Rolex 2025 Collection</h5>
+                        <p class="text-muted">Launching in June</p>
+                        <button class="btn btn-outline-primary btn-sm">Notify Me</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card upcoming-card text-center">
+                    <div class="card-body">
+                        <i class="bi bi-bag-heart display-1 text-primary mb-3"></i>
+                        <h5 class="card-title">Dior Summer Edition</h5>
+                        <p class="text-muted">Launching in July</p>
+                        <button class="btn btn-outline-primary btn-sm">Notify Me</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card upcoming-card text-center">
+                    <div class="card-body">
+                        <i class="bi bi-lightning display-1 text-primary mb-3"></i>
+                        <h5 class="card-title">Adidas Ultra 4D</h5>
+                        <p class="text-muted">Launching in August</p>
+                        <button class="btn btn-outline-primary btn-sm">Notify Me</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Early Access Section -->
+    <section class="early-access bg-gradient p-5 rounded-4 mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <span class="badge bg-warning mb-3">VIP Access</span>
+                <h2 class="display-5 fw-bold mb-4">Get Early Access</h2>
+                <p class="lead mb-4">Join our exclusive VIP list to unlock:</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        24-hour early access to new releases
+                    </li>
+                    <li class="mb-2">
+                        <i class="bi bi-check
+            <div class="col-md-6">
+                <img src="https://media.istockphoto.com/id/1412240771/photo/headphones-on-white-background.jpg?s=612x612&w=0&k=20&c=DwpnlOcMzclX8zJDKOMSqcXdc1E7gyGYgfX5Xr753aQ=" alt="Early Access" class="img-fluid rounded">
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Quick View Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Product Quick View</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://cdn.flightclub.com/TEMPLATE/251724/1.jpg" class="d-block w-100" alt="Product Image 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.flightclub.com/TEMPLATE/251724/2.jpg" class="d-block w-100" alt="Product Image 2">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Product Details</h4>
+                        <p class="text-muted mb-4">More information about the selected product will appear here.</p>
+                        <div class="mb-3">
+                            <label class="form-label">Select Size</label>
+                            <select class="form-select mb-3">
+                                <option>Select Size</option>
+                                <option>US 8</option>
+                                <option>US 9</option>
+                                <option>US 10</option>
+                                <option>US 11</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary w-100">Add to Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
